@@ -33,14 +33,14 @@ public class ScreenShot {
 	}
 
 	public static ScreenShot removeFloat(ScreenShot s) {
-		System.out.println("Input \n" + s.visualizer(s.getPixels()));
+//		System.out.println("Input \n" + s.visualizer(s.getPixels()));
 		Boolean[][] newPixels = Arrays.stream(s.getPixels())
 			.map(col -> {
 				long countTrue = Arrays.stream(col).takeWhile(pix -> pix).count();
 				return IntStream.range(0, col.length).mapToObj(i -> i < countTrue).toList()
 					.toArray(Boolean[]::new);
 			}).toList().toArray(Boolean[][]::new);
-		System.out.println("Output \n" + s.visualizer(newPixels));
+//		System.out.println("Output \n" + s.visualizer(newPixels));
 		return of(newPixels);
 	}
 
@@ -59,21 +59,21 @@ public class ScreenShot {
 	}
 
 	public static boolean isShifted(ScreenShot before, ScreenShot after) {
-		System.out.println("Before");
-		System.out.println(before.visualizer(before.getPixels()));
-		System.out.println("After");
-		System.out.println(after.visualizer(after.getPixels()));
+//		System.out.println("Before");
+//		System.out.println(before.visualizer(before.getPixels()));
+//		System.out.println("After");
+//		System.out.println(after.visualizer(after.getPixels()));
 		int rowCount = before.getPixels().length;
 		int colCount = before.getPixels()[0].length;
 		for (int i = -colCount; i < colCount; i++) {
 			for (int j = -rowCount; j < rowCount; j++) {
 				if (after.equals((shiftColBy(shiftRowBy(before, j), i)))) {
-					System.out.println("Shifted by " + i + " rows and " + j + " columns");
+//					System.out.println("Shifted by " + i + " rows and " + j + " columns");
 					return true;
 				}
 			}
 		}
-		System.out.println("Not shifted");
+//		System.out.println("Not shifted");
 		return false;
 	}
 
@@ -108,6 +108,10 @@ public class ScreenShot {
 		Arrays.stream(pixels).forEach(col -> Objects.requireNonNull(col, "Null col found in array!"));
 		int rowLength = Arrays.stream(pixels).findAny().orElse(new Boolean[]{}).length;
 		assert Arrays.stream(pixels).allMatch(col -> col.length == rowLength) : "Cols are not of same length!";
+	}
+
+	void validate(){
+		ScreenShot.validate(this);
 	}
 
 	public static ScreenShot of(Boolean[][] pixels) {
