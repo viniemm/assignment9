@@ -4,6 +4,7 @@ import cameras.Camera;
 import cameras.CameraSet;
 import cameras.ScreenShot;
 import org.junit.*;
+
 import static org.junit.Assert.*;
 
 public class CameraSetTest {
@@ -16,22 +17,22 @@ public class CameraSetTest {
 	@Before
 	public void init() {
 		newSet = CameraSet.getBuilder()
-				.setPackages(new int[][]{{1, 2, 3, 4}, {0, 4, 1, 5}, {1, 2, 0, 1}}).setHeight(5).build();
+			.setPackages(new int[][]{{1, 2, 3, 4}, {0, 4, 1, 5}, {1, 2, 0, 1}}).setHeight(5).build();
 		ScreenShot frontShot = ScreenShot.of(
-				new Boolean[][]{{true, false, false, false, false},
-						{true, true, true, true, false},
-						{true, true, true, false, false},
-						{true, true, true, true, true}}
+			new Boolean[][]{{true, false, false, false, false},
+				{true, true, true, true, false},
+				{true, true, true, false, false},
+				{true, true, true, true, true}}
 		);
 		ScreenShot sideShot = ScreenShot.of(
-				new Boolean[][]{{true, true, true, true, false},
-						{true, true, true, true, true},
-						{true, true, false, false, false}}
+			new Boolean[][]{{true, true, true, true, false},
+				{true, true, true, true, true},
+				{true, true, false, false, false}}
 		);
 		ScreenShot topShot = ScreenShot.of(
-				new Boolean[][]{{true, true, true, true},
-						{false, true, true, true},
-						{true, true, false, true}}
+			new Boolean[][]{{true, true, true, true},
+				{false, true, true, true},
+				{true, true, false, true}}
 		);
 		newFront = Camera.getBuilder().setScreenShot(frontShot).setSide(true).build();
 		newSide = Camera.getBuilder().setScreenShot(sideShot).setSide(true).build();
@@ -56,50 +57,50 @@ public class CameraSetTest {
 	@Test
 	public void testCameraAddNoChange() {
 		newSet.addData(ScreenShot.of(
-				new Boolean[][]{{true, false, false, false, false},
-						{true, true, true, true, false},
-						{true, true, true, false, false},
-						{true, true, true, true, true}}
+			new Boolean[][]{{true, false, false, false, false},
+				{true, true, true, true, false},
+				{true, true, true, false, false},
+				{true, true, true, true, true}}
 		), ScreenShot.of(
-				new Boolean[][]{{true, true, true, true, false},
-						{true, true, true, true, true},
-						{true, true, false, false, false}}
+			new Boolean[][]{{true, true, true, true, false},
+				{true, true, true, true, true},
+				{true, true, false, false, false}}
 		), ScreenShot.of(
-				new Boolean[][]{{true, true, true, true},
-						{false, true, true, true},
-						{true, true, false, true}}
+			new Boolean[][]{{true, true, true, true},
+				{false, true, true, true},
+				{true, true, false, true}}
 		));
 	}
 
 	@Test(expected = IllegalArgumentException.class)
 	public void testCameraAddWrong() {
 		newSet.addData(ScreenShot.of(
-				new Boolean[][]{{true, false, false, false, false},
-						{true, true, true, true, false},
-						{true, true, true, false, false},
-						{true, true, true, true, true}}
+			new Boolean[][]{{true, false, false, false, false},
+				{true, true, true, true, false},
+				{true, true, true, false, false},
+				{true, true, true, true, true}}
 		), ScreenShot.of(
-				new Boolean[][]{{true, true, true, true, false},
-						{true, true, true, true, true},
-						{true, true, false, false, false}}
+			new Boolean[][]{{true, true, true, true, false},
+				{true, true, true, true, true},
+				{true, true, false, false, false}}
 		), ScreenShot.of(
-				new Boolean[][]{{true, true, true, false},
-						{false, true, true, true},
-						{true, true, false, true}}
+			new Boolean[][]{{true, true, true, false},
+				{false, true, true, true},
+				{true, true, false, true}}
 		));
 		newSet.addData(ScreenShot.of(
-				new Boolean[][]{{true, false, false, false, false},
-						{true, true, true, true, false},
-						{true, true, true, false, false},
-						{true, true, true, true, true}}
+			new Boolean[][]{{true, false, false, false, false},
+				{true, true, true, true, false},
+				{true, true, true, false, false},
+				{true, true, true, true, true}}
 		), ScreenShot.of(
-				new Boolean[][]{{true, true, true, true, false},
-						{true, true, true, true, true},
-						{true, true, false, false, false}}
+			new Boolean[][]{{true, true, true, true, false},
+				{true, true, true, true, true},
+				{true, true, false, false, false}}
 		), ScreenShot.of(
-				new Boolean[][]{{true, true, true, false},
-						{false, true, true, true},
-						{true, true, false, true}}
+			new Boolean[][]{{true, true, true, false},
+				{false, true, true, true},
+				{true, true, false, true}}
 		));
 	}
 }

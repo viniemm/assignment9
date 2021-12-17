@@ -1,6 +1,7 @@
 package cameras;
 
 import java.util.Arrays;
+import java.util.Objects;
 import java.util.stream.IntStream;
 
 public class CameraSet {
@@ -32,8 +33,7 @@ public class CameraSet {
 			getSideCam().addData(shot1);
 			getFrontCam().addData(shot2);
 			getTopCam().addData(shot3);
-		}
-		catch(Camera.ChangeDetectedException e) {
+		} catch (Camera.ChangeDetectedException e) {
 			throw new IllegalArgumentException(e);
 		}
 
@@ -54,13 +54,19 @@ public class CameraSet {
 		}
 
 		public Builder setPackages(int[][] packages) {
-			validate(packages);
 			this.packages = packages;
 			return this;
 		}
 
 		private void validate(int[][] packages) {
 			// Why need validation smh QA
+//			Validation added
+			Arrays.stream(packages).forEach(col -> Arrays.stream(col).forEach(box -> {
+				if (box > height || box < 0) {
+					System.out.println(box);
+					throw new IllegalArgumentException();
+				}
+			}));
 		}
 
 		public CameraSet build() {
@@ -69,25 +75,25 @@ public class CameraSet {
 			// I imagine the Screenshot for sided as being flipped 90 deg for ease of implementation
 
 			ScreenShot front = ScreenShot.of(IntStream.range(0, packages.length)
-					.map(i -> Arrays.stream(packages)
-							.mapToInt(row -> row[i])
-							.max()
-							.orElse(0))
-					.mapToObj(count -> IntStream.range(0, height).mapToObj(i -> i <= count).toArray(Boolean[]::new))
-					.toArray(Boolean[][]::new));
+				.map(i -> Arrays.stream(packages)
+					.mapToInt(row -> row[i])
+					.max()
+					.orElse(0))
+				.mapToObj(count -> IntStream.range(0, height).mapToObj(i -> i <= count).toArray(Boolean[]::new))
+				.toArray(Boolean[][]::new));
 
 			ScreenShot side = ScreenShot.of((Arrays.stream(packages)
-					.mapToInt(arr -> Arrays.stream(arr).max().orElse(0)))
-					.mapToObj(count -> IntStream.range(0, height).mapToObj(i -> i <= count).toArray(Boolean[]::new))
-					.toArray(Boolean[][]::new));
+				.mapToInt(arr -> Arrays.stream(arr).max().orElse(0)))
+				.mapToObj(count -> IntStream.range(0, height).mapToObj(i -> i <= count).toArray(Boolean[]::new))
+				.toArray(Boolean[][]::new));
 
 			ScreenShot top = ScreenShot.of(Arrays.stream(packages)
-					.map(row -> Arrays.stream(row).mapToObj(i -> i > 0).toArray(Boolean[]::new))
-					.toArray(Boolean[][]::new));
+				.map(row -> Arrays.stream(row).mapToObj(i -> i > 0).toArray(Boolean[]::new))
+				.toArray(Boolean[][]::new));
 
 			return new CameraSet(Camera.getBuilder().setScreenShot(front).setSide(true).build(),
-					Camera.getBuilder().setScreenShot(top).setSide(true).build(),
-					Camera.getBuilder().setScreenShot(side).setSide(false).build());
+				Camera.getBuilder().setScreenShot(top).setSide(true).build(),
+				Camera.getBuilder().setScreenShot(side).setSide(false).build());
 		}
 	}
 
