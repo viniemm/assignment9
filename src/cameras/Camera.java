@@ -36,16 +36,15 @@ public class Camera {
 		ScreenShot filteredS = newS;
 		data.add(newS);
 
-		if(isSide()) filteredS = ScreenShot.removeFloat(filteredS);
+		if (isSide()) filteredS = ScreenShot.removeFloat(filteredS);
 
-		if(ScreenShot.isShifted(trueScreenshot, filteredS)) {
+		if (ScreenShot.isShifted(trueScreenshot, filteredS)) {
 			diffCounter = 0;
-		}
-		else if(diffCounter ++ > MAX_DIFF) {
+		} else if (diffCounter++ > MAX_DIFF) {
 			throw Camera.getExceptionBuilder()
-					.setBefore(trueScreenshot)
-					.setAfter(newS)
-					.build();
+				.setBefore(trueScreenshot)
+				.setAfter(newS)
+				.build();
 		}
 
 	}
@@ -124,11 +123,10 @@ public class Camera {
 
 	@Override
 	public boolean equals(Object other) {
-		if(other instanceof Camera) {
+		if (other instanceof Camera) {
 			return this.getTrueScreenshot() == ((Camera) other).getTrueScreenshot()
-					&& this.isSide() == ((Camera) other).isSide();
-		}
-		else return false;
+				&& this.isSide() == ((Camera) other).isSide();
+		} else return false;
 	}
 
 }

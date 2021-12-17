@@ -36,48 +36,47 @@ public class Camera {
 <span class="nc" id="L36">		ScreenShot filteredS = newS;</span>
 <span class="nc" id="L37">		data.add(newS);</span>
 
-<span class="nc bnc" id="L39" title="All 2 branches missed.">		if(isSide()) filteredS = ScreenShot.removeFloat(filteredS);</span>
+<span class="nc bnc" id="L39" title="All 2 branches missed.">		if (isSide()) filteredS = ScreenShot.removeFloat(filteredS);</span>
 
-<span class="nc bnc" id="L41" title="All 2 branches missed.">		if(ScreenShot.isShifted(trueScreenshot, filteredS)) {</span>
+<span class="nc bnc" id="L41" title="All 2 branches missed.">		if (ScreenShot.isShifted(trueScreenshot, filteredS)) {</span>
 <span class="nc" id="L42">			diffCounter = 0;</span>
-		}
-<span class="nc bnc" id="L44" title="All 2 branches missed.">		else if(diffCounter ++ &gt; MAX_DIFF) {</span>
-<span class="nc" id="L45">			throw Camera.getExceptionBuilder()</span>
-<span class="nc" id="L46">					.setBefore(trueScreenshot)</span>
-<span class="nc" id="L47">					.setAfter(newS)</span>
-<span class="nc" id="L48">					.build();</span>
+<span class="nc bnc" id="L43" title="All 2 branches missed.">		} else if (diffCounter++ &gt; MAX_DIFF) {</span>
+<span class="nc" id="L44">			throw Camera.getExceptionBuilder()</span>
+<span class="nc" id="L45">				.setBefore(trueScreenshot)</span>
+<span class="nc" id="L46">				.setAfter(newS)</span>
+<span class="nc" id="L47">				.build();</span>
 		}
 
-<span class="nc" id="L51">	}</span>
+<span class="nc" id="L50">	}</span>
 
 	public static Builder getBuilder() {
-<span class="fc" id="L54">		return new Builder();</span>
+<span class="fc" id="L53">		return new Builder();</span>
 	}
 
-<span class="fc" id="L57">	public static final class Builder {</span>
-<span class="fc" id="L58">		private ScreenShot data = null;</span>
-<span class="fc" id="L59">		private Boolean isSide = null;</span>
+<span class="fc" id="L56">	public static final class Builder {</span>
+<span class="fc" id="L57">		private ScreenShot data = null;</span>
+<span class="fc" id="L58">		private Boolean isSide = null;</span>
 
 		public Builder setScreenShot(ScreenShot data) {
 			// No validation needed. Sure that the user did the right thing
-<span class="fc" id="L63">			this.data = data;</span>
-<span class="fc" id="L64">			return this;</span>
+<span class="fc" id="L62">			this.data = data;</span>
+<span class="fc" id="L63">			return this;</span>
 		}
 
 		public Builder setSide(Boolean side) {
-<span class="fc" id="L68">			isSide = side;</span>
-<span class="fc" id="L69">			return this;</span>
+<span class="fc" id="L67">			isSide = side;</span>
+<span class="fc" id="L68">			return this;</span>
 		}
 
 		public Camera build() {
-<span class="fc" id="L73">			Objects.requireNonNull(data);</span>
-<span class="fc" id="L74">			Objects.requireNonNull(isSide);</span>
-<span class="nc" id="L75">			return new Camera(data, isSide);</span>
+<span class="fc" id="L72">			Objects.requireNonNull(data);</span>
+<span class="fc" id="L73">			Objects.requireNonNull(isSide);</span>
+<span class="nc" id="L74">			return new Camera(data, isSide);</span>
 		}
 	}
 
 	static ChangeDetectedException.Builder getExceptionBuilder() {
-<span class="nc" id="L80">		return new ChangeDetectedException.Builder();</span>
+<span class="nc" id="L79">		return new ChangeDetectedException.Builder();</span>
 	}
 
 	public static final class ChangeDetectedException extends Exception {
@@ -86,36 +85,36 @@ public class Camera {
 		private final ScreenShot after;
 
 		private ChangeDetectedException(ScreenShot before, ScreenShot after) {
-<span class="nc" id="L89">			super(&quot;Error: changes detected from the data: \n&quot; + before.toString() + &quot;\n to &quot; + after.toString() + &quot;\n&quot;);</span>
-<span class="nc" id="L90">			this.before = before;</span>
-<span class="nc" id="L91">			this.after = after;</span>
-<span class="nc" id="L92">		}</span>
+<span class="nc" id="L88">			super(&quot;Error: changes detected from the data: \n&quot; + before.toString() + &quot;\n to &quot; + after.toString() + &quot;\n&quot;);</span>
+<span class="nc" id="L89">			this.before = before;</span>
+<span class="nc" id="L90">			this.after = after;</span>
+<span class="nc" id="L91">		}</span>
 
 		public ScreenShot getBefore() {
-<span class="nc" id="L95">			return before;</span>
+<span class="nc" id="L94">			return before;</span>
 		}
 
 		public ScreenShot getAfter() {
-<span class="nc" id="L99">			return after;</span>
+<span class="nc" id="L98">			return after;</span>
 		}
 
-<span class="nc" id="L102">		static final class Builder {</span>
+<span class="nc" id="L101">		static final class Builder {</span>
 
 			private ScreenShot before;
 			private ScreenShot after;
 
 			public Builder setBefore(ScreenShot before) {
-<span class="nc" id="L108">				this.before = before;</span>
-<span class="nc" id="L109">				return this;</span>
+<span class="nc" id="L107">				this.before = before;</span>
+<span class="nc" id="L108">				return this;</span>
 			}
 
 			public Builder setAfter(ScreenShot after) {
-<span class="nc" id="L113">				this.after = after;</span>
-<span class="nc" id="L114">				return this;</span>
+<span class="nc" id="L112">				this.after = after;</span>
+<span class="nc" id="L113">				return this;</span>
 			}
 
 			public ChangeDetectedException build() {
-<span class="nc" id="L118">				return new ChangeDetectedException(this.after, this.before);</span>
+<span class="nc" id="L117">				return new ChangeDetectedException(this.after, this.before);</span>
 			}
 		}
 
@@ -124,11 +123,10 @@ public class Camera {
 
 	@Override
 	public boolean equals(Object other) {
-<span class="nc bnc" id="L127" title="All 2 branches missed.">		if(other instanceof Camera) {</span>
-<span class="nc bnc" id="L128" title="All 2 branches missed.">			return this.getTrueScreenshot() == ((Camera) other).getTrueScreenshot()</span>
-<span class="nc bnc" id="L129" title="All 2 branches missed.">					&amp;&amp; this.isSide() == ((Camera) other).isSide();</span>
-		}
-<span class="nc" id="L131">		else return false;</span>
+<span class="nc bnc" id="L126" title="All 2 branches missed.">		if (other instanceof Camera) {</span>
+<span class="nc bnc" id="L127" title="All 2 branches missed.">			return this.getTrueScreenshot() == ((Camera) other).getTrueScreenshot()</span>
+<span class="nc bnc" id="L128" title="All 2 branches missed.">				&amp;&amp; this.isSide() == ((Camera) other).isSide();</span>
+<span class="nc" id="L129">		} else return false;</span>
 	}
 
 }

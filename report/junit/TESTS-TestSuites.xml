@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
-  <testsuite errors="5" failures="0" hostname="vini-dell-7567" id="0" name="CameraSetTest" package="cameras.test" skipped="0" tests="5" time="0.441" timestamp="2021-12-17T01:10:30">
+  <testsuite errors="5" failures="0" hostname="vini-dell-7567" id="0" name="CameraSetTest" package="cameras.test" skipped="0" tests="5" time="0.227" timestamp="2021-12-17T02:15:50">
       <properties>
           <property name="ant.library.dir" value="C:/Program Files (x86)/Apache/apache-ant-1.10.11/lib" />
 
@@ -36,7 +36,7 @@
 
           <property name="output.dir" value="output" />
 
-          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner cameras.test.CameraSetTest skipNonTests=false filtertrace=false haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\vinay\Desktop\assignment9\report\junit\TEST-cameras.test.CameraSetTest.xml crashfile=C:\Users\vinay\Desktop\assignment9\junitvmwatcher17968930859178673410.properties propsfile=C:\Users\vinay\Desktop\assignment9\junit9459091788144502144.properties" />
+          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner cameras.test.CameraSetTest skipNonTests=false filtertrace=false haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\vinay\Desktop\assignment9\report\junit\TEST-cameras.test.CameraSetTest.xml crashfile=C:\Users\vinay\Desktop\assignment9\junitvmwatcher682961450112766801.properties propsfile=C:\Users\vinay\Desktop\assignment9\junit3300603334706946825.properties" />
 
           <property name="jdk.debug" value="release" />
 
@@ -50,7 +50,7 @@
 
           <property name="java.specification.vendor" value="Oracle Corporation" />
 
-          <property name="_jacoco.agentFile" value="C:\Users\vinay\AppData\Local\Temp\jacocoagent4725107774234602612.jar" />
+          <property name="_jacoco.agentFile" value="C:\Users\vinay\AppData\Local\Temp\jacocoagent3394967590772530427.jar" />
 
           <property name="java.version.date" value="2021-04-20" />
 
@@ -150,13 +150,13 @@
 
       </properties>
 
-      <testcase classname="cameras.test.CameraSetTest" name="testCameraSetSide" time="0.128">
+      <testcase classname="cameras.test.CameraSetTest" name="testCameraSetSide" time="0.054">
           <error type="java.lang.NullPointerException">java.lang.NullPointerException
 	at java.base/java.util.Objects.requireNonNull(Objects.java:208)
 	at java.base/java.util.ImmutableCollections$List12.&lt;init&gt;(ImmutableCollections.java:556)
 	at java.base/java.util.List.of(List.java:812)
 	at cameras.Camera.&lt;init&gt;(Camera.java:22)
-	at cameras.Camera$Builder.build(Camera.java:75)
+	at cameras.Camera$Builder.build(Camera.java:74)
 	at cameras.CameraSet$Builder.build(CameraSet.java:88)
 	at cameras.test.CameraSetTest.init(CameraSetTest.java:19)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -188,13 +188,13 @@
 
       </testcase>
 
-      <testcase classname="cameras.test.CameraSetTest" name="testCameraSetFront" time="0.002">
+      <testcase classname="cameras.test.CameraSetTest" name="testCameraSetFront" time="0.001">
           <error type="java.lang.NullPointerException">java.lang.NullPointerException
 	at java.base/java.util.Objects.requireNonNull(Objects.java:208)
 	at java.base/java.util.ImmutableCollections$List12.&lt;init&gt;(ImmutableCollections.java:556)
 	at java.base/java.util.List.of(List.java:812)
 	at cameras.Camera.&lt;init&gt;(Camera.java:22)
-	at cameras.Camera$Builder.build(Camera.java:75)
+	at cameras.Camera$Builder.build(Camera.java:74)
 	at cameras.CameraSet$Builder.build(CameraSet.java:88)
 	at cameras.test.CameraSetTest.init(CameraSetTest.java:19)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -226,13 +226,13 @@
 
       </testcase>
 
-      <testcase classname="cameras.test.CameraSetTest" name="testCameraAddNoChange" time="0.002">
+      <testcase classname="cameras.test.CameraSetTest" name="testCameraAddNoChange" time="0.001">
           <error type="java.lang.NullPointerException">java.lang.NullPointerException
 	at java.base/java.util.Objects.requireNonNull(Objects.java:208)
 	at java.base/java.util.ImmutableCollections$List12.&lt;init&gt;(ImmutableCollections.java:556)
 	at java.base/java.util.List.of(List.java:812)
 	at cameras.Camera.&lt;init&gt;(Camera.java:22)
-	at cameras.Camera$Builder.build(Camera.java:75)
+	at cameras.Camera$Builder.build(Camera.java:74)
 	at cameras.CameraSet$Builder.build(CameraSet.java:88)
 	at cameras.test.CameraSetTest.init(CameraSetTest.java:19)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -270,7 +270,7 @@
 	at java.base/java.util.ImmutableCollections$List12.&lt;init&gt;(ImmutableCollections.java:556)
 	at java.base/java.util.List.of(List.java:812)
 	at cameras.Camera.&lt;init&gt;(Camera.java:22)
-	at cameras.Camera$Builder.build(Camera.java:75)
+	at cameras.Camera$Builder.build(Camera.java:74)
 	at cameras.CameraSet$Builder.build(CameraSet.java:88)
 	at cameras.test.CameraSetTest.init(CameraSetTest.java:19)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -302,13 +302,13 @@
 
       </testcase>
 
-      <testcase classname="cameras.test.CameraSetTest" name="testCameraAddWrong" time="0.009">
+      <testcase classname="cameras.test.CameraSetTest" name="testCameraAddWrong" time="0.001">
           <error type="java.lang.NullPointerException">java.lang.NullPointerException
 	at java.base/java.util.Objects.requireNonNull(Objects.java:208)
 	at java.base/java.util.ImmutableCollections$List12.&lt;init&gt;(ImmutableCollections.java:556)
 	at java.base/java.util.List.of(List.java:812)
 	at cameras.Camera.&lt;init&gt;(Camera.java:22)
-	at cameras.Camera$Builder.build(Camera.java:75)
+	at cameras.Camera$Builder.build(Camera.java:74)
 	at cameras.CameraSet$Builder.build(CameraSet.java:88)
 	at cameras.test.CameraSetTest.init(CameraSetTest.java:19)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -345,7 +345,7 @@
       <system-err><![CDATA[]]></system-err>
 
   </testsuite>
-  <testsuite errors="4" failures="0" hostname="vini-dell-7567" id="1" name="CameraTest" package="cameras.test" skipped="0" tests="4" time="0.309" timestamp="2021-12-17T01:10:32">
+  <testsuite errors="4" failures="0" hostname="vini-dell-7567" id="1" name="CameraTest" package="cameras.test" skipped="0" tests="4" time="0.195" timestamp="2021-12-17T02:15:51">
       <properties>
           <property name="ant.library.dir" value="C:/Program Files (x86)/Apache/apache-ant-1.10.11/lib" />
 
@@ -381,7 +381,7 @@
 
           <property name="output.dir" value="output" />
 
-          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner cameras.test.CameraTest skipNonTests=false filtertrace=false haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\vinay\Desktop\assignment9\report\junit\TEST-cameras.test.CameraTest.xml crashfile=C:\Users\vinay\Desktop\assignment9\junitvmwatcher207270450353153443.properties propsfile=C:\Users\vinay\Desktop\assignment9\junit11771481435262073113.properties" />
+          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner cameras.test.CameraTest skipNonTests=false filtertrace=false haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\vinay\Desktop\assignment9\report\junit\TEST-cameras.test.CameraTest.xml crashfile=C:\Users\vinay\Desktop\assignment9\junitvmwatcher8542954267722619710.properties propsfile=C:\Users\vinay\Desktop\assignment9\junit7494803609260237192.properties" />
 
           <property name="jdk.debug" value="release" />
 
@@ -395,7 +395,7 @@
 
           <property name="java.specification.vendor" value="Oracle Corporation" />
 
-          <property name="_jacoco.agentFile" value="C:\Users\vinay\AppData\Local\Temp\jacocoagent4725107774234602612.jar" />
+          <property name="_jacoco.agentFile" value="C:\Users\vinay\AppData\Local\Temp\jacocoagent3394967590772530427.jar" />
 
           <property name="java.version.date" value="2021-04-20" />
 
@@ -495,7 +495,7 @@
 
       </properties>
 
-      <testcase classname="cameras.test.CameraTest" name="testDegenCameraBuilding" time="0.035">
+      <testcase classname="cameras.test.CameraTest" name="testDegenCameraBuilding" time="0.024">
           <error message="Unexpected exception, expected&lt;java.lang.IllegalArgumentException&gt; but was&lt;java.lang.NullPointerException&gt;" type="java.lang.Exception">java.lang.Exception: Unexpected exception, expected&lt;java.lang.IllegalArgumentException&gt; but was&lt;java.lang.NullPointerException&gt;
 	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:30)
 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
@@ -516,7 +516,7 @@
 	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.main(JUnitTestRunner.java:1042)
 Caused by: java.lang.NullPointerException
 	at java.base/java.util.Objects.requireNonNull(Objects.java:208)
-	at cameras.Camera$Builder.build(Camera.java:73)
+	at cameras.Camera$Builder.build(Camera.java:72)
 	at cameras.test.CameraTest.testDegenCameraBuilding(CameraTest.java:24)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
@@ -532,7 +532,7 @@ Caused by: java.lang.NullPointerException
 
       </testcase>
 
-      <testcase classname="cameras.test.CameraTest" name="testCameraAddFail" time="0.014">
+      <testcase classname="cameras.test.CameraTest" name="testCameraAddFail" time="0.009">
           <error message="Unexpected exception, expected&lt;cameras.Camera$ChangeDetectedException&gt; but was&lt;java.lang.NullPointerException&gt;" type="java.lang.Exception">java.lang.Exception: Unexpected exception, expected&lt;cameras.Camera$ChangeDetectedException&gt; but was&lt;java.lang.NullPointerException&gt;
 	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:30)
 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
@@ -556,7 +556,7 @@ Caused by: java.lang.NullPointerException
 	at java.base/java.util.ImmutableCollections$List12.&lt;init&gt;(ImmutableCollections.java:556)
 	at java.base/java.util.List.of(List.java:812)
 	at cameras.Camera.&lt;init&gt;(Camera.java:22)
-	at cameras.Camera$Builder.build(Camera.java:75)
+	at cameras.Camera$Builder.build(Camera.java:74)
 	at cameras.test.CameraTest.testCameraAddFail(CameraTest.java:55)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
@@ -572,13 +572,13 @@ Caused by: java.lang.NullPointerException
 
       </testcase>
 
-      <testcase classname="cameras.test.CameraTest" name="testCameraBuilding" time="0.002">
+      <testcase classname="cameras.test.CameraTest" name="testCameraBuilding" time="0.001">
           <error type="java.lang.NullPointerException">java.lang.NullPointerException
 	at java.base/java.util.Objects.requireNonNull(Objects.java:208)
 	at java.base/java.util.ImmutableCollections$List12.&lt;init&gt;(ImmutableCollections.java:556)
 	at java.base/java.util.List.of(List.java:812)
 	at cameras.Camera.&lt;init&gt;(Camera.java:22)
-	at cameras.Camera$Builder.build(Camera.java:75)
+	at cameras.Camera$Builder.build(Camera.java:74)
 	at cameras.test.CameraTest.testCameraBuilding(CameraTest.java:15)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
@@ -614,7 +614,7 @@ Caused by: java.lang.NullPointerException
 	at java.base/java.util.ImmutableCollections$List12.&lt;init&gt;(ImmutableCollections.java:556)
 	at java.base/java.util.List.of(List.java:812)
 	at cameras.Camera.&lt;init&gt;(Camera.java:22)
-	at cameras.Camera$Builder.build(Camera.java:75)
+	at cameras.Camera$Builder.build(Camera.java:74)
 	at cameras.test.CameraTest.testCameraAddNormal(CameraTest.java:34)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
@@ -649,7 +649,7 @@ Caused by: java.lang.NullPointerException
       <system-err><![CDATA[]]></system-err>
 
   </testsuite>
-  <testsuite errors="0" failures="4" hostname="vini-dell-7567" id="2" name="ScreenShotTest" package="cameras.test" skipped="0" tests="4" time="0.3" timestamp="2021-12-17T01:10:33">
+  <testsuite errors="0" failures="0" hostname="vini-dell-7567" id="2" name="ScreenShotTest" package="cameras.test" skipped="0" tests="1" time="0.178" timestamp="2021-12-17T02:15:52">
       <properties>
           <property name="ant.library.dir" value="C:/Program Files (x86)/Apache/apache-ant-1.10.11/lib" />
 
@@ -685,7 +685,7 @@ Caused by: java.lang.NullPointerException
 
           <property name="output.dir" value="output" />
 
-          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner cameras.test.ScreenShotTest skipNonTests=false filtertrace=false haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\vinay\Desktop\assignment9\report\junit\TEST-cameras.test.ScreenShotTest.xml crashfile=C:\Users\vinay\Desktop\assignment9\junitvmwatcher10832306413154895054.properties propsfile=C:\Users\vinay\Desktop\assignment9\junit12016887531274662068.properties" />
+          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner cameras.test.ScreenShotTest skipNonTests=false filtertrace=false haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\vinay\Desktop\assignment9\report\junit\TEST-cameras.test.ScreenShotTest.xml crashfile=C:\Users\vinay\Desktop\assignment9\junitvmwatcher2790758543768251140.properties propsfile=C:\Users\vinay\Desktop\assignment9\junit5624242069415114827.properties" />
 
           <property name="jdk.debug" value="release" />
 
@@ -699,7 +699,7 @@ Caused by: java.lang.NullPointerException
 
           <property name="java.specification.vendor" value="Oracle Corporation" />
 
-          <property name="_jacoco.agentFile" value="C:\Users\vinay\AppData\Local\Temp\jacocoagent4725107774234602612.jar" />
+          <property name="_jacoco.agentFile" value="C:\Users\vinay\AppData\Local\Temp\jacocoagent3394967590772530427.jar" />
 
           <property name="java.version.date" value="2021-04-20" />
 
@@ -799,145 +799,10 @@ Caused by: java.lang.NullPointerException
 
       </properties>
 
-      <testcase classname="cameras.test.ScreenShotTest" name="testIsShifted" time="0.069">
-          <failure message="Error: Should be True" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Error: Should be True
-	at org.junit.Assert.fail(Assert.java:89)
-	at org.junit.Assert.assertTrue(Assert.java:42)
-	at cameras.test.ScreenShotTest.testIsShifted(ScreenShotTest.java:34)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
-	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:50)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:535)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.launch(JUnitTestRunner.java:1197)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.main(JUnitTestRunner.java:1042)
-</failure>
+      <testcase classname="cameras.test.ScreenShotTest" name="testShiftColBy" time="0.029" />
 
-      </testcase>
-
-      <testcase classname="cameras.test.ScreenShotTest" name="testRemoveFloat" time="0.014">
-          <failure message="expected:&lt;cameras.ScreenShot@74e52ef6&gt; but was:&lt;cameras.ScreenShot@6ed3ccb2&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;cameras.ScreenShot@74e52ef6&gt; but was:&lt;cameras.ScreenShot@6ed3ccb2&gt;
-	at org.junit.Assert.fail(Assert.java:89)
-	at org.junit.Assert.failNotEquals(Assert.java:835)
-	at org.junit.Assert.assertEquals(Assert.java:120)
-	at org.junit.Assert.assertEquals(Assert.java:146)
-	at cameras.test.ScreenShotTest.testRemoveFloat(ScreenShotTest.java:55)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
-	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:50)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:535)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.launch(JUnitTestRunner.java:1197)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.main(JUnitTestRunner.java:1042)
-</failure>
-
-      </testcase>
-
-      <testcase classname="cameras.test.ScreenShotTest" name="testShiftColBy" time="0.001">
-          <failure message="expected:&lt;cameras.ScreenShot@489115ef&gt; but was:&lt;cameras.ScreenShot@3857f613&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;cameras.ScreenShot@489115ef&gt; but was:&lt;cameras.ScreenShot@3857f613&gt;
-	at org.junit.Assert.fail(Assert.java:89)
-	at org.junit.Assert.failNotEquals(Assert.java:835)
-	at org.junit.Assert.assertEquals(Assert.java:120)
-	at org.junit.Assert.assertEquals(Assert.java:146)
-	at cameras.test.ScreenShotTest.testShiftColBy(ScreenShotTest.java:14)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
-	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:50)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:535)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.launch(JUnitTestRunner.java:1197)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.main(JUnitTestRunner.java:1042)
-</failure>
-
-      </testcase>
-
-      <testcase classname="cameras.test.ScreenShotTest" name="testShiftRowBy" time="0.002">
-          <failure message="expected:&lt;cameras.ScreenShot@3c9754d8&gt; but was:&lt;cameras.ScreenShot@3bf7ca37&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;cameras.ScreenShot@3c9754d8&gt; but was:&lt;cameras.ScreenShot@3bf7ca37&gt;
-	at org.junit.Assert.fail(Assert.java:89)
-	at org.junit.Assert.failNotEquals(Assert.java:835)
-	at org.junit.Assert.assertEquals(Assert.java:120)
-	at org.junit.Assert.assertEquals(Assert.java:146)
-	at cameras.test.ScreenShotTest.testShiftRowBy(ScreenShotTest.java:26)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
-	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:50)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:535)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.launch(JUnitTestRunner.java:1197)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.main(JUnitTestRunner.java:1042)
-</failure>
-
-      </testcase>
-
-      <system-out><![CDATA[]]></system-out>
+      <system-out><![CDATA[[[false, true, true], [false, true, false], [false, true, true]]
+]]></system-out>
 
       <system-err><![CDATA[]]></system-err>
 
