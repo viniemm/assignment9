@@ -33,40 +33,47 @@ public class ScreenShot {
 	}
 
 	public static ScreenShot removeFloat(ScreenShot s) {
+		System.out.println("Input \n" + s.visualizer(s.getPixels()));
 		Boolean[][] newPixels = Arrays.stream(s.getPixels())
 			.map(col -> {
 				long countTrue = Arrays.stream(col).takeWhile(pix -> pix).count();
-				return IntStream.range(0, col.length).mapToObj(i -> i > countTrue).collect(Collectors.toList())
+				return IntStream.range(0, col.length).mapToObj(i -> i > countTrue).toList()
 					.toArray(Boolean[]::new);
 			}).toList().toArray(Boolean[][]::new);
+		System.out.println("Output \n" + s.visualizer(newPixels));
 		return of(newPixels);
 	}
 
 	private String visualizer(Boolean[][] boxes) {
-		String res = "";
-		for (int i = 0; i < boxes.length; i++) {
-			for (int j = 0; j < boxes[0].length; j++) {
-				if (boxes[i][j])
-					res += "X";
+		StringBuilder s = new StringBuilder();
+		IntStream.iterate(boxes[0].length - 1, j -> j > -1, j -> j - 1).forEach(j -> {
+			Arrays.stream(boxes).forEach(box -> {
+				if (box[j])
+					s.append("X");
 				else
-					res+=".";
-			}
-			res+="\n";
-		}
-		return res;
+					s.append(".");
+			});
+			s.append("\n");
+		});
+		return s.toString();
 	}
 
 	public static boolean isShifted(ScreenShot before, ScreenShot after) {
+		System.out.println("Before");
+		System.out.println(before.visualizer(before.getPixels()));
+		System.out.println("After");
+		System.out.println(after.visualizer(after.getPixels()));
 		int rowCount = before.getPixels().length;
 		int colCount = before.getPixels()[0].length;
-
 		for (int i = -colCount; i < colCount; i++) {
 			for (int j = -rowCount; j < rowCount; j++) {
 				if (after.equals((shiftColBy(shiftRowBy(before, j), i)))) {
+					System.out.println("Shifted by " + i + " rows and " + j + " columns");
 					return true;
 				}
 			}
 		}
+		System.out.println("Not shifted");
 		return false;
 	}
 
