@@ -37,7 +37,7 @@ public class ScreenShot {
 		Boolean[][] newPixels = Arrays.stream(s.getPixels())
 			.map(col -> {
 				long countTrue = Arrays.stream(col).takeWhile(pix -> pix).count();
-				return IntStream.range(0, col.length).mapToObj(i -> i > countTrue).toList()
+				return IntStream.range(0, col.length).mapToObj(i -> i < countTrue).toList()
 					.toArray(Boolean[]::new);
 			}).toList().toArray(Boolean[][]::new);
 		System.out.println("Output \n" + s.visualizer(newPixels));
