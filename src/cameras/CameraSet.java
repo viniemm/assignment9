@@ -71,11 +71,9 @@ public class CameraSet {
 
 		public CameraSet build() {
 
-			// Such an over-complicated algorithm! Really hope I didn't mess up anywhere
-			// I imagine the Screenshot for sided as being flipped 90 deg for ease of implementation
-
-//			Minor changes for front. i should be < count and not <= because indexing starts at 0. IntStream.range should be inclusive of packages.length.
-			ScreenShot front = ScreenShot.of(IntStream.range(0, packages.length+1)
+			// Minor changes for front. i should be < count and not <= because indexing starts at 0.
+			// IntStream.range should be inclusive of packages.length.
+			ScreenShot front = ScreenShot.of(IntStream.range(0, packages.length + 1)
 				.map(i -> Arrays.stream(packages)
 					.mapToInt(row -> row[i])
 					.max()
@@ -83,12 +81,10 @@ public class CameraSet {
 				.mapToObj(count -> IntStream.range(0, height).mapToObj(i -> i < count).toArray(Boolean[]::new))
 				.toArray(Boolean[][]::new));
 
-			System.out.println(front.visualizer(front.getPixels()));
-			System.out.println(Arrays.deepToString(front.getPixels()));
-
+			// Minor changes for side. i should be < count and not <= because indexing starts at 0.
 			ScreenShot side = ScreenShot.of((Arrays.stream(packages)
 				.mapToInt(arr -> Arrays.stream(arr).max().orElse(0)))
-				.mapToObj(count -> IntStream.range(0, height).mapToObj(i -> i <= count).toArray(Boolean[]::new))
+				.mapToObj(count -> IntStream.range(0, height).mapToObj(i -> i < count).toArray(Boolean[]::new))
 				.toArray(Boolean[][]::new));
 
 			ScreenShot top = ScreenShot.of(Arrays.stream(packages)
