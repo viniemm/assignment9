@@ -43,13 +43,27 @@ public class ScreenShot {
 		return of(newPixels);
 	}
 
+	private String visualizer(Boolean[][] boxes) {
+		String res = "";
+		for (int i = 0; i < boxes.length; i++) {
+			for (int j = 0; j < boxes[0].length; j++) {
+				if (boxes[i][j])
+					res += "X";
+				else
+					res+=".";
+			}
+			res+="\n";
+		}
+		return res;
+	}
+
 	public static boolean isShifted(ScreenShot before, ScreenShot after) {
 		int rowCount = before.getPixels().length;
 		int colCount = before.getPixels()[0].length;
 
-		for (int i = -colCount + 1; i < colCount; i++) {
-			for (int j = -rowCount + 1; j < rowCount; j++) {
-				if (after == (shiftColBy(shiftRowBy(before, i), j))) {
+		for (int i = -colCount; i < colCount; i++) {
+			for (int j = -rowCount; j < rowCount; j++) {
+				if (after.equals((shiftColBy(shiftRowBy(before, j), i)))) {
 					return true;
 				}
 			}
@@ -58,9 +72,9 @@ public class ScreenShot {
 	}
 
 	public static ScreenShot shiftRowBy(ScreenShot screenShot, int k) {
-		return of(IntStream.range(0, screenShot.getPixels().length)
+		return k == 0 ? screenShot : of(IntStream.range(0, screenShot.getPixels().length)
 			.mapToObj(i -> {
-				if (i - k > 0 && i - k < screenShot.getPixels().length) {
+				if (i - k > -1 && i - k < screenShot.getPixels().length) {
 					return Arrays.copyOf(screenShot.getPixels()[i - k], screenShot.getPixels()[i - k].length);
 				} else {
 					return IntStream.range(0, screenShot.getPixels()[0].length)
@@ -71,17 +85,15 @@ public class ScreenShot {
 	}
 
 	public static ScreenShot shiftColBy(ScreenShot screenShot, int k) {
-		ScreenShot result = of(
+		return k == 0 ? screenShot : of(
 			Arrays.stream(screenShot.getPixels())
 				.map(row -> IntStream.range(0, row.length)
 					.mapToObj(i -> {
-						if (i - k + 1 > 0 && i - k + 1 < row.length) {
+						if (i - k > -1 && i - k < row.length) {
 							return row[i - k];
 						} else return false;
 					}).toArray(Boolean[]::new))
 				.toArray(Boolean[][]::new));
-		System.out.println(Arrays.deepToString(result.getPixels()));
-		return result;
 	}
 
 	private static void validate(ScreenShot s) {

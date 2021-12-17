@@ -43,70 +43,82 @@ import java.util.stream.IntStream;
 <span class="nc" id="L43">		return of(newPixels);</span>
 	}
 
-	public static boolean isShifted(ScreenShot before, ScreenShot after) {
-<span class="nc" id="L47">		int rowCount = before.getPixels().length;</span>
-<span class="nc" id="L48">		int colCount = before.getPixels()[0].length;</span>
+	private String visualizer(Boolean[][] boxes) {
+<span class="nc" id="L47">		String res = &quot;&quot;;</span>
+<span class="nc bnc" id="L48" title="All 2 branches missed.">		for (int i = 0; i &lt; boxes.length; i++) {</span>
+<span class="nc bnc" id="L49" title="All 2 branches missed.">			for (int j = 0; j &lt; boxes[0].length; j++) {</span>
+<span class="nc bnc" id="L50" title="All 2 branches missed.">				if (boxes[i][j])</span>
+<span class="nc" id="L51">					res += &quot;X&quot;;</span>
+				else
+<span class="nc" id="L53">					res+=&quot;.&quot;;</span>
+			}
+<span class="nc" id="L55">			res+=&quot;\n&quot;;</span>
+		}
+<span class="nc" id="L57">		return res;</span>
+	}
 
-<span class="nc bnc" id="L50" title="All 2 branches missed.">		for (int i = -colCount + 1; i &lt; colCount; i++) {</span>
-<span class="nc bnc" id="L51" title="All 2 branches missed.">			for (int j = -rowCount + 1; j &lt; rowCount; j++) {</span>
-<span class="nc bnc" id="L52" title="All 2 branches missed.">				if (after == (shiftColBy(shiftRowBy(before, i), j))) {</span>
-<span class="nc" id="L53">					return true;</span>
+	public static boolean isShifted(ScreenShot before, ScreenShot after) {
+<span class="fc" id="L61">		int rowCount = before.getPixels().length;</span>
+<span class="fc" id="L62">		int colCount = before.getPixels()[0].length;</span>
+
+<span class="fc bfc" id="L64" title="All 2 branches covered.">		for (int i = -colCount; i &lt; colCount; i++) {</span>
+<span class="fc bfc" id="L65" title="All 2 branches covered.">			for (int j = -rowCount; j &lt; rowCount; j++) {</span>
+<span class="fc bfc" id="L66" title="All 2 branches covered.">				if (after.equals((shiftColBy(shiftRowBy(before, j), i)))) {</span>
+<span class="fc" id="L67">					return true;</span>
 				}
 			}
 		}
-<span class="nc" id="L57">		return false;</span>
+<span class="fc" id="L71">		return false;</span>
 	}
 
 	public static ScreenShot shiftRowBy(ScreenShot screenShot, int k) {
-<span class="nc" id="L61">		return of(IntStream.range(0, screenShot.getPixels().length)</span>
-<span class="nc" id="L62">			.mapToObj(i -&gt; {</span>
-<span class="nc bnc" id="L63" title="All 4 branches missed.">				if (i - k &gt; 0 &amp;&amp; i - k &lt; screenShot.getPixels().length) {</span>
-<span class="nc" id="L64">					return Arrays.copyOf(screenShot.getPixels()[i - k], screenShot.getPixels()[i - k].length);</span>
+<span class="fc bfc" id="L75" title="All 2 branches covered.">		return k == 0 ? screenShot : of(IntStream.range(0, screenShot.getPixels().length)</span>
+<span class="fc" id="L76">			.mapToObj(i -&gt; {</span>
+<span class="fc bfc" id="L77" title="All 4 branches covered.">				if (i - k &gt; -1 &amp;&amp; i - k &lt; screenShot.getPixels().length) {</span>
+<span class="fc" id="L78">					return Arrays.copyOf(screenShot.getPixels()[i - k], screenShot.getPixels()[i - k].length);</span>
 				} else {
-<span class="nc" id="L66">					return IntStream.range(0, screenShot.getPixels()[0].length)</span>
-<span class="nc" id="L67">						.mapToObj(j -&gt; false)</span>
-<span class="nc" id="L68">						.toArray(Boolean[]::new);</span>
+<span class="fc" id="L80">					return IntStream.range(0, screenShot.getPixels()[0].length)</span>
+<span class="fc" id="L81">						.mapToObj(j -&gt; false)</span>
+<span class="fc" id="L82">						.toArray(Boolean[]::new);</span>
 				}
-<span class="nc" id="L70">			}).toArray(Boolean[][]::new));</span>
+<span class="fc" id="L84">			}).toArray(Boolean[][]::new));</span>
 	}
 
 	public static ScreenShot shiftColBy(ScreenShot screenShot, int k) {
-<span class="fc" id="L74">		ScreenShot result = of(</span>
-<span class="fc" id="L75">			Arrays.stream(screenShot.getPixels())</span>
-<span class="fc" id="L76">				.map(row -&gt; IntStream.range(0, row.length)</span>
-<span class="fc" id="L77">					.mapToObj(i -&gt; {</span>
-<span class="pc bpc" id="L78" title="1 of 4 branches missed.">						if (i - k+1 &gt; 0 &amp;&amp; i - k+1 &lt; row.length) {</span>
-<span class="fc" id="L79">							return row[i - k];</span>
-<span class="fc" id="L80">						} else return false;</span>
-<span class="fc" id="L81">					}).toArray(Boolean[]::new))</span>
-<span class="fc" id="L82">				.toArray(Boolean[][]::new));</span>
-<span class="fc" id="L83">		System.out.println(Arrays.deepToString(result.getPixels()));</span>
-<span class="fc" id="L84">		return result;</span>
+<span class="fc bfc" id="L88" title="All 2 branches covered.">		return k == 0 ? screenShot : of(</span>
+<span class="fc" id="L89">			Arrays.stream(screenShot.getPixels())</span>
+<span class="fc" id="L90">				.map(row -&gt; IntStream.range(0, row.length)</span>
+<span class="fc" id="L91">					.mapToObj(i -&gt; {</span>
+<span class="fc bfc" id="L92" title="All 4 branches covered.">						if (i - k &gt; -1 &amp;&amp; i - k &lt; row.length) {</span>
+<span class="fc" id="L93">							return row[i - k];</span>
+<span class="fc" id="L94">						} else return false;</span>
+<span class="fc" id="L95">					}).toArray(Boolean[]::new))</span>
+<span class="fc" id="L96">				.toArray(Boolean[][]::new));</span>
 	}
 
 	private static void validate(ScreenShot s) {
-<span class="fc" id="L88">		Boolean[][] pixels = s.pixels;</span>
-<span class="fc" id="L89">		Objects.requireNonNull(pixels);</span>
-<span class="fc" id="L90">		Arrays.stream(pixels).forEach(col -&gt; Objects.requireNonNull(col, &quot;Null col found in array!&quot;));</span>
-<span class="fc" id="L91">		int rowLength = Arrays.stream(pixels).findAny().orElse(new Boolean[]{}).length;</span>
-<span class="pc bpc" id="L92" title="3 of 6 branches missed.">		assert Arrays.stream(pixels).allMatch(col -&gt; col.length == rowLength) : &quot;Cols are not of same length!&quot;;</span>
-<span class="fc" id="L93">	}</span>
+<span class="fc" id="L100">		Boolean[][] pixels = s.pixels;</span>
+<span class="fc" id="L101">		Objects.requireNonNull(pixels);</span>
+<span class="fc" id="L102">		Arrays.stream(pixels).forEach(col -&gt; Objects.requireNonNull(col, &quot;Null col found in array!&quot;));</span>
+<span class="fc" id="L103">		int rowLength = Arrays.stream(pixels).findAny().orElse(new Boolean[]{}).length;</span>
+<span class="pc bpc" id="L104" title="3 of 6 branches missed.">		assert Arrays.stream(pixels).allMatch(col -&gt; col.length == rowLength) : &quot;Cols are not of same length!&quot;;</span>
+<span class="fc" id="L105">	}</span>
 
 	public static ScreenShot of(Boolean[][] pixels) {
-<span class="fc" id="L96">		ScreenShot newScreenShot = new ScreenShot(pixels);</span>
+<span class="fc" id="L108">		ScreenShot newScreenShot = new ScreenShot(pixels);</span>
 		try {
-<span class="fc" id="L98">			validate(newScreenShot);</span>
-<span class="fc" id="L99">			return newScreenShot;</span>
-<span class="nc" id="L100">		} catch (Exception e) {</span>
-<span class="nc" id="L101">			throw new IllegalArgumentException(e.getMessage());</span>
+<span class="fc" id="L110">			validate(newScreenShot);</span>
+<span class="fc" id="L111">			return newScreenShot;</span>
+<span class="nc" id="L112">		} catch (Exception e) {</span>
+<span class="nc" id="L113">			throw new IllegalArgumentException(e.getMessage());</span>
 		}
 	}
 
 	@Override
 	public boolean equals(Object other) {
-<span class="pc bpc" id="L107" title="1 of 2 branches missed.">		if (other instanceof ScreenShot) {</span>
-<span class="fc" id="L108">			return Arrays.deepEquals(this.getPixels(), ((ScreenShot) other).getPixels());</span>
-<span class="nc" id="L109">		} else return false;</span>
+<span class="pc bpc" id="L119" title="1 of 2 branches missed.">		if (other instanceof ScreenShot) {</span>
+<span class="fc" id="L120">			return Arrays.deepEquals(this.getPixels(), ((ScreenShot) other).getPixels());</span>
+<span class="nc" id="L121">		} else return false;</span>
 	}
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

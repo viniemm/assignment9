@@ -9,7 +9,7 @@
         
     cur = TestCases['cameras.test.ScreenShotTest'] = new Array();
     
-        cur['_jacoco.agentFile'] = 'C:\\Users\\vinay\\AppData\\Local\\Temp\\jacocoagent11904264414326683160.jar';
+        cur['_jacoco.agentFile'] = 'C:\\Users\\vinay\\AppData\\Local\\Temp\\jacocoagent1676845397662144131.jar';
     
         cur['ant.core.lib'] = 'C:\\Program Files (x86)\\Apache\\apache-ant-1.10.11\\lib\\ant.jar';
     
@@ -127,7 +127,7 @@
     
         cur['sun.io.unicode.encoding'] = 'UnicodeLittle';
     
-        cur['sun.java.command'] = 'org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner cameras.test.ScreenShotTest skipNonTests=false filtertrace=false haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\\Users\\vinay\\Desktop\\assignment9\\report\\junit\\TEST-cameras.test.ScreenShotTest.xml crashfile=C:\\Users\\vinay\\Desktop\\assignment9\\junitvmwatcher6430253167701448809.properties propsfile=C:\\Users\\vinay\\Desktop\\assignment9\\junit689102820989603394.properties';
+        cur['sun.java.command'] = 'org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner cameras.test.ScreenShotTest skipNonTests=false filtertrace=false haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\\Users\\vinay\\Desktop\\assignment9\\report\\junit\\TEST-cameras.test.ScreenShotTest.xml crashfile=C:\\Users\\vinay\\Desktop\\assignment9\\junitvmwatcher18004258201750332504.properties propsfile=C:\\Users\\vinay\\Desktop\\assignment9\\junit3035010306183083312.properties';
     
         cur['sun.java.launcher'] = 'SUN_STANDARD';
     
@@ -197,26 +197,26 @@
             <tr valign="top">
                 <th width="80%">Name</th><th>Tests</th><th>Errors</th><th>Failures</th><th>Skipped</th><th nowrap>Time(s)</th><th nowrap>Time Stamp</th><th>Host</th>
             </tr>
-            <tr valign="top" class="Failure">
-                <td><a title="Display all tests" href="2_ScreenShotTest.html">ScreenShotTest</a></td><td><a title="Display all tests" href="2_ScreenShotTest.html">3</a></td><td>0</td><td><a title="Display only failures" href="2_ScreenShotTest-fails.html">1</a></td><td>0</td><td>0.497</td><td>2021-12-17T03:48:01</td><td>vini-dell-7567</td>
+            <tr valign="top" class="Error">
+                <td><a title="Display all tests" href="2_ScreenShotTest.html">ScreenShotTest</a></td><td><a title="Display all tests" href="2_ScreenShotTest.html">3</a></td><td><a title="Display only errors" href="2_ScreenShotTest-errors.html">1</a></td><td>0</td><td>0</td><td>0.207</td><td>2021-12-17T03:34:49</td><td>vini-dell-7567</td>
             </tr>
         </table>
-        <h2>Failures</h2>
+        <h2>Errors</h2>
         <table class="details" border="0" cellpadding="5" cellspacing="2" width="95%">
             <tr valign="top">
                 <th>Name</th><th>Status</th><th width="80%">Type</th><th nowrap>Time(s)</th>
             </tr>
-            <tr valign="top" class="Failure">
-                <td><a name="testIsShifted"></a>testIsShifted</td><td>Failure</td><td>Error: Should be True
+            <tr valign="top" class="Error">
+                <td><a name="testIsShifted"></a>testIsShifted</td><td>Error</td><td>Index 3 out of bounds for length 3
                     <br>
                     <br>
-                    <code>junit.framework.AssertionFailedError: Error: Should be True
+                    <code>java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
                         <br>
-                        	at org.junit.Assert.fail(Assert.java:89)
+                        	at cameras.ScreenShot.visualizer(ScreenShot.java:50)
                         <br>
-                        	at org.junit.Assert.assertTrue(Assert.java:42)
+                        	at cameras.ScreenShot.isShifted(ScreenShot.java:66)
                         <br>
-                        	at cameras.test.ScreenShotTest.testIsShifted(ScreenShotTest.java:52)
+                        	at cameras.test.ScreenShotTest.testIsShifted(ScreenShotTest.java:40)
                         <br>
                         	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
                         <br>
@@ -266,18 +266,13 @@
                         <br>
                         	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.main(JUnitTestRunner.java:1042)
                         <br>
-                    </code></td><td>0.136</td>
+                    </code></td><td>0.041</td>
             </tr>
         </table>
         <div class="Properties">
             <a href="javascript:displayProperties('cameras.test.ScreenShotTest');">
                     Properties &raquo;
                 </a>
-        </div>
-        <div class="Properties">
-            <a href="./2_ScreenShotTest-out.html">
-                        System.out &raquo;
-                    </a>
         </div>
     </body>
 </html>
