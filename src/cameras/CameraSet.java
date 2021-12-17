@@ -1,6 +1,7 @@
 package cameras;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 import java.util.stream.IntStream;
 
@@ -58,15 +59,20 @@ public class CameraSet {
 			return this;
 		}
 
-		private void validate(int[][] packages) {
+		private CameraSet validate(CameraSet camSet) {
 			// Why need validation smh QA
-//			Validation added
-			Arrays.stream(packages).forEach(col -> Arrays.stream(col).forEach(box -> {
-				if (box > height || box < 0) {
-					System.out.println(box);
-					throw new IllegalArgumentException();
-				}
-			}));
+			// Validation added
+			assert (height > 0);
+			camSet.frontCam.getData().forEach(sc->sc.validate());
+			camSet.sideCam.getData().forEach(sc->sc.validate());
+			camSet.topCam.getData().forEach(sc->sc.validate());
+//			Arrays.stream(packages).forEach(col -> Arrays.stream(col).forEach(box -> {
+//				if (box > height || box < 0) {
+//					System.out.println(box);
+//					throw new IllegalArgumentException();
+//				}
+//			}));
+			return camSet;
 		}
 
 		public CameraSet build() {
@@ -92,9 +98,9 @@ public class CameraSet {
 				.toArray(Boolean[][]::new));
 
 			// side and top wer flipped
-			return new CameraSet(Camera.getBuilder().setScreenShot(front).setSide(true).build(),
+			return validate(new CameraSet(Camera.getBuilder().setScreenShot(front).setSide(true).build(),
 				Camera.getBuilder().setScreenShot(side).setSide(true).build(),
-				Camera.getBuilder().setScreenShot(top).setSide(false).build());
+				Camera.getBuilder().setScreenShot(top).setSide(false).build()));
 		}
 	}
 
