@@ -44,19 +44,19 @@ public class ScreenShot {
 		return of(newPixels);
 	}
 
-	String visualizer(Boolean[][] boxes) {
-		StringBuilder s = new StringBuilder();
-		IntStream.iterate(boxes[0].length - 1, j -> j > -1, j -> j - 1).forEach(j -> {
-			Arrays.stream(boxes).forEach(box -> {
-				if (box[j])
-					s.append("X");
-				else
-					s.append(".");
-			});
-			s.append("\n");
-		});
-		return s.toString();
-	}
+//	String visualizer(Boolean[][] boxes) {
+//		StringBuilder s = new StringBuilder();
+//		IntStream.iterate(boxes[0].length - 1, j -> j > -1, j -> j - 1).forEach(j -> {
+//			Arrays.stream(boxes).forEach(box -> {
+//				if (box[j])
+//					s.append("X");
+//				else
+//					s.append(".");
+//			});
+//			s.append("\n");
+//		});
+//		return s.toString();
+//	}
 
 	public static boolean isShifted(ScreenShot before, ScreenShot after) {
 //		System.out.println("Before");
