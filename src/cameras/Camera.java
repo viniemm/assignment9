@@ -13,12 +13,13 @@ public class Camera {
 		return trueScreenshot;
 	}
 
-	private final ScreenShot trueScreenshot = null;
+	private final ScreenShot trueScreenshot;
 	private int diffCounter;
 
 	private final static int MAX_DIFF = 1;
 
 	private Camera(ScreenShot trueScreenshot, boolean isSide) {
+		this.trueScreenshot = trueScreenshot;
 		this.data = new ArrayList<>(List.of(this.trueScreenshot));
 		this.isSide = isSide;
 		diffCounter = 0;
