@@ -74,8 +74,7 @@ public class CameraSet {
 			// Such an over-complicated algorithm! Really hope I didn't mess up anywhere
 			// I imagine the Screenshot for sided as being flipped 90 deg for ease of implementation
 
-//			Minor changes for front. i should be < count and not <= because indexing starts at 0.
-//			IntStream.range should be inclusive of packages.length.
+//			Minor changes for front. i should be < count and not <= because indexing starts at 0. IntStream.range should be inclusive of packages.length.
 			ScreenShot front = ScreenShot.of(IntStream.range(0, packages.length+1)
 				.map(i -> Arrays.stream(packages)
 					.mapToInt(row -> row[i])
