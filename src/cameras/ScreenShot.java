@@ -44,7 +44,7 @@ public class ScreenShot {
 		return of(newPixels);
 	}
 
-	private String visualizer(Boolean[][] boxes) {
+	String visualizer(Boolean[][] boxes) {
 		StringBuilder s = new StringBuilder();
 		IntStream.iterate(boxes[0].length - 1, j -> j > -1, j -> j - 1).forEach(j -> {
 			Arrays.stream(boxes).forEach(box -> {
