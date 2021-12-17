@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="vini-dell-7567" name="cameras.test.ScreenShotTest" skipped="0" tests="3" time="0.242" timestamp="2021-12-17T03:51:17">
+<testsuite errors="0" failures="1" hostname="vini-dell-7567" name="cameras.test.ScreenShotTest" skipped="0" tests="4" time="0.473" timestamp="2021-12-17T03:56:32">
   <properties>
     <property name="ant.library.dir" value="C:/Program Files (x86)/Apache/apache-ant-1.10.11/lib" />
     <property name="ant.file.type" value="file" />
@@ -18,14 +18,14 @@
     <property name="user.country" value="US" />
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-16.0.1\bin" />
     <property name="output.dir" value="output" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner cameras.test.ScreenShotTest skipNonTests=false filtertrace=false haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\vinay\Desktop\assignment9\report\junit\TEST-cameras.test.ScreenShotTest.xml crashfile=C:\Users\vinay\Desktop\assignment9\junitvmwatcher13453897666668800701.properties propsfile=C:\Users\vinay\Desktop\assignment9\junit11307826224541043904.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner cameras.test.ScreenShotTest skipNonTests=false filtertrace=false haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\vinay\Desktop\assignment9\report\junit\TEST-cameras.test.ScreenShotTest.xml crashfile=C:\Users\vinay\Desktop\assignment9\junitvmwatcher6551378995906477932.properties propsfile=C:\Users\vinay\Desktop\assignment9\junit898797950242842214.properties" />
     <property name="jdk.debug" value="release" />
     <property name="sun.cpu.endian" value="little" />
     <property name="user.home" value="C:\Users\vinay" />
     <property name="user.language" value="en" />
     <property name="sun.stderr.encoding" value="cp437" />
     <property name="java.specification.vendor" value="Oracle Corporation" />
-    <property name="_jacoco.agentFile" value="C:\Users\vinay\AppData\Local\Temp\jacocoagent5215549609189552969.jar" />
+    <property name="_jacoco.agentFile" value="C:\Users\vinay\AppData\Local\Temp\jacocoagent66227829972015401.jar" />
     <property name="java.version.date" value="2021-04-20" />
     <property name="java.home" value="C:\Program Files\Java\jdk-16.0.1" />
     <property name="ant.file.map" value="C:\Users\vinay\Desktop\assignment9\build.xml" />
@@ -75,9 +75,42 @@
     <property name="java.class.version" value="60.0" />
     <property name="src.dir" value="src" />
   </properties>
-  <testcase classname="cameras.test.ScreenShotTest" name="testIsShifted" time="0.056" />
+  <testcase classname="cameras.test.ScreenShotTest" name="testIsShifted" time="0.074" />
+  <testcase classname="cameras.test.ScreenShotTest" name="testRemoveFloat" time="0.034">
+    <failure message="expected:&lt;cameras.ScreenShot@5542c4ed&gt; but was:&lt;cameras.ScreenShot@1573f9fc&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;cameras.ScreenShot@5542c4ed&gt; but was:&lt;cameras.ScreenShot@1573f9fc&gt;
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:120)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at cameras.test.ScreenShotTest.testRemoveFloat(ScreenShotTest.java:67)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:50)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:535)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.launch(JUnitTestRunner.java:1197)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.main(JUnitTestRunner.java:1042)
+</failure>
+  </testcase>
   <testcase classname="cameras.test.ScreenShotTest" name="testShiftColBy" time="0.001" />
-  <testcase classname="cameras.test.ScreenShotTest" name="testShiftRowBy" time="0.0" />
+  <testcase classname="cameras.test.ScreenShotTest" name="testShiftRowBy" time="0.001" />
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

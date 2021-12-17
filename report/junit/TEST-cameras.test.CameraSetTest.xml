@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="5" failures="0" hostname="vini-dell-7567" name="cameras.test.CameraSetTest" skipped="0" tests="5" time="0.251" timestamp="2021-12-17T03:51:15">
+<testsuite errors="5" failures="0" hostname="vini-dell-7567" name="cameras.test.CameraSetTest" skipped="0" tests="5" time="0.319" timestamp="2021-12-17T03:56:30">
   <properties>
     <property name="ant.library.dir" value="C:/Program Files (x86)/Apache/apache-ant-1.10.11/lib" />
     <property name="ant.file.type" value="file" />
@@ -18,14 +18,14 @@
     <property name="user.country" value="US" />
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-16.0.1\bin" />
     <property name="output.dir" value="output" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner cameras.test.CameraSetTest skipNonTests=false filtertrace=false haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\vinay\Desktop\assignment9\report\junit\TEST-cameras.test.CameraSetTest.xml crashfile=C:\Users\vinay\Desktop\assignment9\junitvmwatcher16539688929358783708.properties propsfile=C:\Users\vinay\Desktop\assignment9\junit4176947306627276515.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner cameras.test.CameraSetTest skipNonTests=false filtertrace=false haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\vinay\Desktop\assignment9\report\junit\TEST-cameras.test.CameraSetTest.xml crashfile=C:\Users\vinay\Desktop\assignment9\junitvmwatcher10659847725831395455.properties propsfile=C:\Users\vinay\Desktop\assignment9\junit14596867234723324274.properties" />
     <property name="jdk.debug" value="release" />
     <property name="sun.cpu.endian" value="little" />
     <property name="user.home" value="C:\Users\vinay" />
     <property name="user.language" value="en" />
     <property name="sun.stderr.encoding" value="cp437" />
     <property name="java.specification.vendor" value="Oracle Corporation" />
-    <property name="_jacoco.agentFile" value="C:\Users\vinay\AppData\Local\Temp\jacocoagent5215549609189552969.jar" />
+    <property name="_jacoco.agentFile" value="C:\Users\vinay\AppData\Local\Temp\jacocoagent66227829972015401.jar" />
     <property name="java.version.date" value="2021-04-20" />
     <property name="java.home" value="C:\Program Files\Java\jdk-16.0.1" />
     <property name="ant.file.map" value="C:\Users\vinay\Desktop\assignment9\build.xml" />
@@ -75,7 +75,7 @@
     <property name="java.class.version" value="60.0" />
     <property name="src.dir" value="src" />
   </properties>
-  <testcase classname="cameras.test.CameraSetTest" name="testCameraSetSide" time="0.053">
+  <testcase classname="cameras.test.CameraSetTest" name="testCameraSetSide" time="0.06">
     <error type="java.lang.NullPointerException">java.lang.NullPointerException
 	at java.base/java.util.Objects.requireNonNull(Objects.java:208)
 	at java.base/java.util.ImmutableCollections$List12.&lt;init&gt;(ImmutableCollections.java:556)
@@ -111,7 +111,7 @@
 	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.main(JUnitTestRunner.java:1042)
 </error>
   </testcase>
-  <testcase classname="cameras.test.CameraSetTest" name="testCameraSetFront" time="0.003">
+  <testcase classname="cameras.test.CameraSetTest" name="testCameraSetFront" time="0.002">
     <error type="java.lang.NullPointerException">java.lang.NullPointerException
 	at java.base/java.util.Objects.requireNonNull(Objects.java:208)
 	at java.base/java.util.ImmutableCollections$List12.&lt;init&gt;(ImmutableCollections.java:556)
@@ -183,7 +183,7 @@
 	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.main(JUnitTestRunner.java:1042)
 </error>
   </testcase>
-  <testcase classname="cameras.test.CameraSetTest" name="testCameraSetTop" time="0.002">
+  <testcase classname="cameras.test.CameraSetTest" name="testCameraSetTop" time="0.003">
     <error type="java.lang.NullPointerException">java.lang.NullPointerException
 	at java.base/java.util.Objects.requireNonNull(Objects.java:208)
 	at java.base/java.util.ImmutableCollections$List12.&lt;init&gt;(ImmutableCollections.java:556)
@@ -219,7 +219,7 @@
 	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.main(JUnitTestRunner.java:1042)
 </error>
   </testcase>
-  <testcase classname="cameras.test.CameraSetTest" name="testCameraAddWrong" time="0.003">
+  <testcase classname="cameras.test.CameraSetTest" name="testCameraAddWrong" time="0.002">
     <error type="java.lang.NullPointerException">java.lang.NullPointerException
 	at java.base/java.util.Objects.requireNonNull(Objects.java:208)
 	at java.base/java.util.ImmutableCollections$List12.&lt;init&gt;(ImmutableCollections.java:556)

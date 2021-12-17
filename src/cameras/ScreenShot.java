@@ -38,8 +38,7 @@ public class ScreenShot {
 				long countTrue = Arrays.stream(col).takeWhile(pix -> pix).count();
 				return IntStream.range(0, col.length).mapToObj(i -> i > countTrue).collect(Collectors.toList())
 					.toArray(Boolean[]::new);
-			})
-			.collect(Collectors.toList()).toArray(Boolean[][]::new);
+			}).toList().toArray(Boolean[][]::new);
 		return of(newPixels);
 	}
 

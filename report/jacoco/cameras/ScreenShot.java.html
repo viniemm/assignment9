@@ -33,14 +33,14 @@ import java.util.stream.IntStream;
 	}
 
 	public static ScreenShot removeFloat(ScreenShot s) {
-<span class="nc" id="L36">		Boolean[][] newPixels = Arrays.stream(s.getPixels())</span>
-<span class="nc" id="L37">			.map(col -&gt; {</span>
-<span class="nc" id="L38">				long countTrue = Arrays.stream(col).takeWhile(pix -&gt; pix).count();</span>
-<span class="nc bnc" id="L39" title="All 2 branches missed.">				return IntStream.range(0, col.length).mapToObj(i -&gt; i &gt; countTrue).collect(Collectors.toList())</span>
-<span class="nc" id="L40">					.toArray(Boolean[]::new);</span>
+<span class="fc" id="L36">		Boolean[][] newPixels = Arrays.stream(s.getPixels())</span>
+<span class="fc" id="L37">			.map(col -&gt; {</span>
+<span class="fc" id="L38">				long countTrue = Arrays.stream(col).takeWhile(pix -&gt; pix).count();</span>
+<span class="fc bfc" id="L39" title="All 2 branches covered.">				return IntStream.range(0, col.length).mapToObj(i -&gt; i &gt; countTrue).collect(Collectors.toList())</span>
+<span class="fc" id="L40">					.toArray(Boolean[]::new);</span>
 			})
-<span class="nc" id="L42">			.collect(Collectors.toList()).toArray(Boolean[][]::new);</span>
-<span class="nc" id="L43">		return of(newPixels);</span>
+<span class="fc" id="L42">			.collect(Collectors.toList()).toArray(Boolean[][]::new);</span>
+<span class="fc" id="L43">		return of(newPixels);</span>
 	}
 
 	private String visualizer(Boolean[][] boxes) {

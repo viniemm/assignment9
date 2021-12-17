@@ -35,18 +35,6 @@ public class ScreenShotTest {
 				{true, false, false}}), ScreenShot.shiftRowBy(s, 1));
 	}
 
-//	@Test
-//	public void testIsShifted() {
-//		assertTrue("Error: Should be True", ScreenShot.isShifted(
-//			ScreenShot.of(new Boolean[][]{
-//				{true, true, true, true, true,},
-//				{true, true, true, true, true,},
-//				{true, true, true, true, true,}}),
-//			ScreenShot.of(new Boolean[][]{
-//				{false, false, false, false, true},
-//				{false, false, false, false, true},
-//				{false, false, false, false, true}})));
-//	}
 	@Test
 	public void testIsShifted() {
 		assertTrue("Error: Should be True", ScreenShot.isShifted(
@@ -70,15 +58,15 @@ public class ScreenShotTest {
 	}
 
 
-//	@Test
-//	public void testRemoveFloat() {
-//		ScreenShot s = ScreenShot.of(new Boolean[][]{
-//			{true, false, true},
-//			{true, true, false},
-//			{false, false, false}});
-//		assertEquals(ScreenShot.of(new Boolean[][]{
-//			{true, false, false},
-//			{true, true, false},
-//			{false, false, false}}), ScreenShot.removeFloat(s));
-//	}
+	@Test
+	public void testRemoveFloat() {
+		ScreenShot s = ScreenShot.of(new Boolean[][]{
+			{true, false, true},
+			{true, true, false},
+			{false, false, false}});
+		assertEquals(ScreenShot.of(new Boolean[][]{
+			{true, false, false},
+			{true, true, false},
+			{false, false, false}}), ScreenShot.removeFloat(s));
+	}
 }
