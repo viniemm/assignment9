@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ScreenShot.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">map</a> &gt; <a href="index.source.html" class="el_package">cameras</a> &gt; <span class="el_source">ScreenShot.java</span></div><h1>ScreenShot.java</h1><pre class="source lang-java linenums">/*
+ * An example to demonstrate the testing of private methods by means of an inner class.
+ */
+package cameras;
+
+/* import javax.annotation.Generated;
+ * does not work with Cobertura due to annotation argument.
+ * Use CoverageIgnore instead.
+ */
+
+import java.util.Arrays;
+import java.util.Objects;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
+/**
+ * A class under test
+ */
+<span class="pc bpc" id="L19" title="1 of 2 branches missed.">public class ScreenShot {</span>
+
+	/*
+	Define the rows in this 2D array as the pixels of given by the camera.
+	Oh boy really hope I didn't mix row with col
+	 */
+	private final Boolean[][] pixels;
+
+<span class="fc" id="L27">	private ScreenShot(Boolean[][] pixels) {</span>
+<span class="fc" id="L28">		this.pixels = pixels;</span>
+<span class="fc" id="L29">	}</span>
+
+	public Boolean[][] getPixels() {
+<span class="fc" id="L32">		return pixels;</span>
+	}
+
+	public static ScreenShot removeFloat(ScreenShot s) {
+<span class="fc" id="L36">		Boolean[][] newPixels = Arrays.stream(s.getPixels())</span>
+<span class="fc" id="L37">				.map(col -&gt; {</span>
+<span class="fc" id="L38">			long countTrue = Arrays.stream(col).takeWhile(pix -&gt; pix).count();</span>
+<span class="fc bfc" id="L39" title="All 2 branches covered.">			return IntStream.range(0, col.length).mapToObj(i -&gt; i &gt; countTrue).collect(Collectors.toList())</span>
+<span class="fc" id="L40">					.toArray(Boolean[]::new);</span>
+		})
+<span class="fc" id="L42">				.collect(Collectors.toList()).toArray(Boolean[][]::new);</span>
+<span class="fc" id="L43">		return of(newPixels);</span>
+	}
+
+	public static boolean isShifted(ScreenShot before, ScreenShot after) {
+<span class="fc" id="L47">		int rowCount = before.getPixels().length;</span>
+<span class="fc" id="L48">		int colCount = before.getPixels()[0].length;</span>
+
+<span class="fc bfc" id="L50" title="All 2 branches covered.">		for(int i = -colCount+1; i &lt; colCount; i++) {</span>
+<span class="fc bfc" id="L51" title="All 2 branches covered.">			for(int j = -rowCount+1; j &lt; rowCount; j++) {</span>
+<span class="pc bpc" id="L52" title="1 of 2 branches missed.">				if(after == (shiftColBy(shiftRowBy(before, i), j))) {</span>
+<span class="nc" id="L53">					return true;</span>
+				}
+			}
+		}
+<span class="fc" id="L57">		return false;</span>
+	}
+
+	public static ScreenShot shiftRowBy(ScreenShot screenShot, int k) {
+<span class="fc" id="L61">		return of(IntStream.range(0, screenShot.getPixels().length)</span>
+<span class="fc" id="L62">				.mapToObj(i -&gt; {</span>
+<span class="fc bfc" id="L63" title="All 4 branches covered.">					if(i - k &gt; 0 &amp;&amp; i - k &lt; screenShot.getPixels().length) {</span>
+<span class="fc" id="L64">						return Arrays.copyOf(screenShot.getPixels()[i - k], screenShot.getPixels()[i - k].length);</span>
+					}
+					else {
+<span class="fc" id="L67">						return IntStream.range(0, screenShot.getPixels()[0].length)</span>
+<span class="fc" id="L68">								.mapToObj(j -&gt; false)</span>
+<span class="fc" id="L69">								.toArray(Boolean[]::new);</span>
+					}
+<span class="fc" id="L71">				}).toArray(Boolean[][]::new));</span>
+	}
+
+	public static ScreenShot shiftColBy(ScreenShot screenShot, int k) {
+<span class="fc" id="L75">		return of(</span>
+<span class="fc" id="L76">				Arrays.stream(screenShot.getPixels())</span>
+<span class="fc" id="L77">						.map(row -&gt; IntStream.range(0, row.length)</span>
+<span class="fc" id="L78">								.mapToObj(i -&gt; {</span>
+<span class="fc bfc" id="L79" title="All 4 branches covered.">									if(i - k &gt; 0 &amp;&amp; i - k &lt; row.length) {</span>
+<span class="fc" id="L80">										return row[i - k];</span>
+									}
+<span class="fc" id="L82">									else return false;</span>
+<span class="fc" id="L83">								}).toArray(Boolean[]::new))</span>
+<span class="fc" id="L84">						.toArray(Boolean[][]::new));</span>
+	}
+
+	private static void validate(ScreenShot s){
+<span class="fc" id="L88">		Boolean[][] pixels = s.pixels;</span>
+
+<span class="fc" id="L90">		Objects.requireNonNull(pixels);</span>
+
+<span class="fc" id="L92">		Arrays.stream(pixels).forEach(col -&gt; Objects.requireNonNull(col, &quot;Null col found in array!&quot;));</span>
+
+<span class="fc" id="L94">		int rowLength = Arrays.stream(pixels).findAny().orElse(new Boolean[]{}).length;</span>
+
+<span class="pc bpc" id="L96" title="3 of 6 branches missed.">		assert Arrays.stream(pixels).allMatch(col -&gt; col.length == rowLength) : &quot;Cols are not of same length!&quot;;</span>
+<span class="fc" id="L97">	}</span>
+
+	public static ScreenShot of(Boolean[][] pixels) {
+<span class="fc" id="L100">		ScreenShot newScreenShot = new ScreenShot(pixels);</span>
+		try {
+<span class="fc" id="L102">			validate(newScreenShot);</span>
+<span class="fc" id="L103">			return newScreenShot;</span>
+<span class="nc" id="L104">		} catch(Exception e) {</span>
+<span class="nc" id="L105">			throw new IllegalArgumentException(e.getMessage());</span>
+		}
+	}
+
+	@Override
+	public boolean equals(Object other) {
+<span class="pc bpc" id="L111" title="1 of 2 branches missed.">		if(other instanceof ScreenShot) {</span>
+<span class="fc" id="L112">			return Arrays.deepEquals(this.getPixels(), ((ScreenShot) other).getPixels());</span>
+		}
+<span class="nc" id="L114">		else return false;</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
