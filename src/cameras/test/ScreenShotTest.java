@@ -69,4 +69,17 @@ public class ScreenShotTest {
 			{true, true, false},
 			{false, false, false}}), ScreenShot.removeFloat(s));
 	}
+
+//	@Test
+//	public void testEquals() {
+//		ScreenShot s1 = ScreenShot.of(new Boolean[][]{
+//			{true, false, true},
+//			{true, true, false},
+//			{false, false, false}});
+//		ScreenShot s2 = ScreenShot.of(new Boolean[][]{
+//			{true, false, true},
+//			{true, true, false},
+//			{false, false, false}});
+//		assertEquals(s1, s2);
+//	}
 }

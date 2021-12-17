@@ -5,6 +5,8 @@ import cameras.CameraSet;
 import cameras.ScreenShot;
 import org.junit.*;
 
+import java.util.Arrays;
+
 import static org.junit.Assert.*;
 
 public class CameraSetTest {
@@ -43,34 +45,35 @@ public class CameraSetTest {
 	public void testCameraSetFront() {
 		assertEquals(newSet.getFrontCam(), newFront);
 	}
-//
-//	@Test
-//	public void testCameraSetSide() {
-//		assertEquals(newSet.getSideCam(), newSide);
-//	}
-//
-//	@Test
-//	public void testCameraSetTop() {
-//		assertEquals(newSet.getTopCam(), newTop);
-//	}
-//
-//	@Test
-//	public void testCameraAddNoChange() {
-//		newSet.addData(ScreenShot.of(
-//			new Boolean[][]{{true, false, false, false, false},
-//				{true, true, true, true, false},
-//				{true, true, true, false, false},
-//				{true, true, true, true, true}}
-//		), ScreenShot.of(
-//			new Boolean[][]{{true, true, true, true, false},
-//				{true, true, true, true, true},
-//				{true, true, false, false, false}}
-//		), ScreenShot.of(
-//			new Boolean[][]{{true, true, true, true},
-//				{false, true, true, true},
-//				{true, true, false, true}}
-//		));
-//	}
+
+	@Test
+	public void testCameraSetSide() {
+
+		assertEquals(newSet.getSideCam(), newSide);
+	}
+
+	@Test
+	public void testCameraSetTop() {
+		assertEquals(newSet.getTopCam(), newTop);
+	}
+
+	@Test
+	public void testCameraAddNoChange() {
+		newSet.addData(ScreenShot.of(
+			new Boolean[][]{{true, false, false, false, false},
+				{true, true, true, true, false},
+				{true, true, true, false, false},
+				{true, true, true, true, true}}
+		), ScreenShot.of(
+			new Boolean[][]{{true, true, true, true, false},
+				{true, true, true, true, true},
+				{true, true, false, false, false}}
+		), ScreenShot.of(
+			new Boolean[][]{{true, true, true, true},
+				{false, true, true, true},
+				{true, true, false, true}}
+		));
+	}
 //
 //	@Test(expected = IllegalArgumentException.class)
 //	public void testCameraAddWrong() {

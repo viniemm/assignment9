@@ -135,7 +135,7 @@ public class Camera {
 	@Override
 	public boolean equals(Object other) {
 		if (other instanceof Camera) {
-			return this.getTrueScreenshot() == ((Camera) other).getTrueScreenshot()
+			return this.getTrueScreenshot().equals( ((Camera) other).getTrueScreenshot())
 				&& this.isSide() == ((Camera) other).isSide();
 		} else return false;
 	}

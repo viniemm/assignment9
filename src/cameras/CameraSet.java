@@ -91,9 +91,10 @@ public class CameraSet {
 				.map(row -> Arrays.stream(row).mapToObj(i -> i > 0).toArray(Boolean[]::new))
 				.toArray(Boolean[][]::new));
 
+			// side and top wer flipped
 			return new CameraSet(Camera.getBuilder().setScreenShot(front).setSide(true).build(),
-				Camera.getBuilder().setScreenShot(top).setSide(true).build(),
-				Camera.getBuilder().setScreenShot(side).setSide(false).build());
+				Camera.getBuilder().setScreenShot(side).setSide(true).build(),
+				Camera.getBuilder().setScreenShot(top).setSide(false).build());
 		}
 	}
 
